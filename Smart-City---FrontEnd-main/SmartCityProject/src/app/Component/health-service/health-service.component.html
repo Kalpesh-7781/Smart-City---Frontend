@@ -1,0 +1,27 @@
+<!-- health-service.component.html -->
+<div id="background" *ngIf="hospitals">
+  <h1>Welcome to Hospital Appointment Booking</h1>
+
+  <div id="hospitals" *ngFor="let item of hospitals">
+    <div class="hospital">
+      <img src="{{item.img}}" alt="Hospital Image">
+      <h3>{{ item.name }}</h3>
+      <p>Contact: {{item.contactNumber}}</p>
+      <p>Services Available: {{item.servicesOffered}}</p>
+      <p>Address: {{ item.address }}</p>
+      
+      <button type="submit" (click)="bookAppointment({item})">Book an Appointment</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Google Forms Modal -->
+<div id="formModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeForm()">&times;</span>
+    <iframe id="googleForm" width="640" height="480" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+  </div>
+</div>
+
+<script src="script.js"></script>
